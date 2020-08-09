@@ -338,7 +338,8 @@ Configuration CIS_WindowsServer2016_v110 {
        SecurityOption AccountSecurityOptions {
          Name                                   = 'AccountSecurityOptions'
          # 2.3.1.1 (L1) Ensure 'Accounts: Administrator account status' is set to 'Disabled' (MS only)
-         Accounts_Administrator_account_status  = 'Disabled'
+         # Accounts_Administrator_account_status  = 'Disabled'
+         # NOT USED for AWS EC2 Instance with Administrator being the default account.
          # 2.3.1.2 (L1) Ensure 'Accounts: Block Microsoft accounts' is set to 'Users can't add or log on with Microsoft accounts'
          Accounts_Block_Microsoft_accounts = 'Users cant add or log on with Microsoft accounts'
          # 2.3.1.3 (L1) Ensure 'Accounts: Guest account status' is set to 'Disabled' (MS only)
