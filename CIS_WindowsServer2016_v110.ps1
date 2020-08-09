@@ -3013,4 +3013,17 @@ Configuration CIS_WindowsServer2016_v110 {
    }
 }
 
+mkdir C:\CIS -Force
+cd C:\CIS
+
 CIS_WindowsServer2016_v110
+
+try {
+    Start-DscConfiguration -Path .\CIS_WindowsServer2016_v110  -Force -Verbose -Wait 4> .\log.txt
+        write-host "Applying Benchmarks CIS benchmarks Succesful"
+    }
+catch {
+    write-host "##ERROR in applying CIS benchmarks ###"
+    cat  .\log.txt
+    } 
+
